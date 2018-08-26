@@ -20,8 +20,18 @@ public class Customers {
 	@Column(name = "lastName")
 	private String lastName;
 	
+	public String getGender() {
+		return gender;
+	}
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
 	@Column(name = "age")
-	private String age;
+	private int age;
+	
+	
+	@Column(name = "gender")
+	private String gender;
 	
 	@Column(name = "phoneNo")
 	private String phoneNo;
@@ -38,7 +48,7 @@ public class Customers {
 	public Customers() {
 		
 	}
-	public Customers(String firstName, String lastName, String age, String phoneNo, String email, String password) {
+	public Customers(String firstName, String lastName, int age, String phoneNo, String email, String password,String gender) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -46,8 +56,14 @@ public class Customers {
 		this.phoneNo = phoneNo;
 		this.email = email;
 		this.password = password;
+		this.gender = gender;
 	}
 
+	@Override
+	public String toString() {
+		return "Customers [firstName=" + firstName + ", lastName=" + lastName + ", age=" + age + ", gender=" + gender
+				+ ", phoneNo=" + phoneNo + ", email=" + email + ", password=" + password + "]";
+	}
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
 	}
@@ -57,10 +73,10 @@ public class Customers {
 	public void setLastName(String lastName) {
 		this.lastName = lastName;
 	}
-	public String getAge() {
+	public int getAge() {
 		return age;
 	}
-	public void setAge(String age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
 	public String getPhoneNo() {
