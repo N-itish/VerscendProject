@@ -16,8 +16,8 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
 import com.verscend.HappyTrip.Entity.Customers;
-import com.verscend.HappyTrip.Entity.MessageService;
 import com.verscend.HappyTrip.Entity.Repository.CustomersRepository;
+import com.verscend.HappyTrip.Services.MessageService;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -32,7 +32,8 @@ public class CustomerController {
 	
 	@Autowired
 	CustomersRepository cusRep;
-	
+	//TODO: need to store the username and password in the list
+	List<HashMap<String, String>> CustomersLogin = new ArrayList<>();
 	
 	@RequestMapping(value = "/all",method = RequestMethod.GET)
 	public List<Customers> getAll(){
@@ -65,7 +66,10 @@ public class CustomerController {
 	@RequestMapping(value = "/login", method = RequestMethod.POST)
 	public HashMap<String, String> login(@RequestBody String login) {
 		
+		//This hashmap is used to return data back to angular
 		HashMap<String, String> returnedData = new HashMap<>();
+		
+		
 		JSONObject loginObject = new JSONObject(login);
 		String userName = loginObject.getString("userName");
 		String password = loginObject.getString("password");
