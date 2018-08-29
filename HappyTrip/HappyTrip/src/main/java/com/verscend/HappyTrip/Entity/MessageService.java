@@ -1,4 +1,4 @@
-package com.verscend.HappyTrip.Services;
+package com.verscend.HappyTrip.Entity;
 
 import java.util.*;
 import javax.mail.*;

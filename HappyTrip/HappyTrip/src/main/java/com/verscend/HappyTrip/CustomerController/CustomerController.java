@@ -17,7 +17,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 import com.verscend.HappyTrip.Entity.Customers;
 import com.verscend.HappyTrip.Entity.Repository.CustomersRepository;
-import com.verscend.HappyTrip.Services.MessageService;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -27,13 +27,12 @@ import java.util.List;
 @RequestMapping("/Customers")
 @CrossOrigin(origins = "*", allowCredentials = "true", allowedHeaders = "*")
 public class CustomerController {
-	@Autowired
-	MessageService messageService;
+	
 	
 	@Autowired
 	CustomersRepository cusRep;
 	//TODO: need to store the username and password in the list
-	List<HashMap<String, String>> CustomersLogin = new ArrayList<>();
+	//List<HashMap<String, String>> CustomersLogin = new ArrayList<>();
 	
 	@RequestMapping(value = "/all",method = RequestMethod.GET)
 	public List<Customers> getAll(){
@@ -47,9 +46,10 @@ public class CustomerController {
 		cusRep.save(customer);
 		
 	}
-	@RequestMapping(value = "/update", method = RequestMethod.PUT)
-	public void update() {
-		System.out.println("data updated");
+	@RequestMapping(value = "/add", method = RequestMethod.PUT)
+	public void update(@RequestBody Customers customer) {
+		cusRep.save(customer);
+		System.out.println("data updated!!!");
 	}
 	
 	@RequestMapping(value = "/delete/{id}",method = RequestMethod.DELETE)
@@ -59,7 +59,7 @@ public class CustomerController {
 	}
 	@RequestMapping(value = "/sendMail")
 	public void message() {
-		messageService.SendMail();
+		
 	}
 	
 	//This is used for login	
