@@ -1,0 +1,16 @@
+
+ <div class = "packageForm">
+     <h2>Create New Package<hr></h2>
+    <form (ngSubmit) = "createPackage(packageForm)" #packageForm = "ngForm">
+
+    Package name        <input         type = "text" name = "packageName"><br>
+    Package Description <input         type = "text" name = "packageDescription"><br>
+    Image Location      <input         type = "text" name = "imageLocation"><br>
+    No of Days          <input         type = "number" name = "days"><br>
+    Price               <input         type = "text" name = "price"><br>
+    Starting Date       <input         type = "date" name = "starting"><br>
+    Ending Date         <input         type = "date" name = "ending"><br>
+    <input type = "submit" value = "Create">
+    </form>
+</div> 
+

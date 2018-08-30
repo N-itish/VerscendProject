@@ -1,0 +1,20 @@
+<div *ngIf = "HistoryList">
+    <table>
+        <tr>
+            <th>firstName</th>
+            <th>lastName</th>
+            <th>gender</th>
+            <th>phoneNo</th>
+            <th>email</th>
+            <th>age</th>
+        <tr>
+        <tr *ngFor="let cus of HistoryList">
+            <td>{{cus.firstName}}</td>
+            <td>{{cus.lastName}}</td>
+            <td>{{cus.gender}}</td>
+            <td>{{cus.phoneNo}}</td>
+            <td>{{cus.email}}</td>
+            <td>{{cus.age}}</td>
+        </tr>
+    </table>
+</div>
