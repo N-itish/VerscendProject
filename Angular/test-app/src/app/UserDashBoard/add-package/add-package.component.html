@@ -3,14 +3,14 @@
      <h2>Create New Package<hr></h2>
     <form (ngSubmit) = "createPackage(packageForm)" #packageForm = "ngForm">
 
-    Package name        <input         type = "text" name = "packageName"><br>
-    Package Description <input         type = "text" name = "packageDescription"><br>
-    Image Location      <input         type = "text" name = "imageLocation"><br>
-    No of Days          <input         type = "number" name = "days"><br>
-    Price               <input         type = "text" name = "price"><br>
-    Starting Date       <input         type = "date" name = "starting"><br>
-    Ending Date         <input         type = "date" name = "ending"><br>
-    <input type = "submit" value = "Create">
+    <label>Package name</label>        <input  [(ngModel)] = "packageName"            type = "text" name = "packageName"><br>
+    <label>Package Description</label> <input  [(ngModel)] = "packageDescription"     type = "text" name = "packageDescription"><br>
+    <label>Image Location</label>      <input  [(ngModel)] = "imageLocation"          type = "text" name = "imageLocation"><br>
+    <label>No of Days</label>          <input  [(ngModel)] = "days"                   type = "number" name = "days"><br>
+    <label>Price</label>               <input  [(ngModel)] = "price"                  type = "text" name = "price"><br>
+    <label>Starting Date</label>       <input  [(ngModel)] = "starting"               type = "date" name = "starting"><br>
+    <label>Ending Date</label>         <input  [(ngModel)] = "ending"                 type = "date" name = "ending"><br>
+    <input class = "submitButtonEM"type = "submit" value = "Create">
     </form>
 </div> 
 
