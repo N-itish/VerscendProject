@@ -19,6 +19,8 @@ public class PackageTrip {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	@Column(name = "id")
 	private int id;
+	@Column(name = "packageName")
+	private String packageName;
 	
 	@Column(name = "packageDescription")
 	private String packageDescription;
@@ -26,6 +28,13 @@ public class PackageTrip {
 	@Column(name = "imageLocation")
 	private String imagesLocation;
 	
+	public String getPackageName() {
+		return packageName;
+	}
+
+	public void setPackageName(String packageName) {
+		this.packageName = packageName;
+	}
 	@Column(name = "location")
 	private String location;
 	
@@ -49,7 +58,7 @@ public class PackageTrip {
 	}
 	
 	public PackageTrip(int id, String packageDescription,String imagesLocation, String location, String days,
-			String price, Date startDate, Date endDate) {
+			String price, Date startDate, Date endDate,String packageName) {
 		super();
 		this.id = id;
 		this.packageDescription = packageDescription;
@@ -59,6 +68,7 @@ public class PackageTrip {
 		this.price = price;
 		this.startDate = startDate;
 		this.endDate = endDate;
+		this.packageName = packageName;
 	}
 	public int getId() {
 		return id;

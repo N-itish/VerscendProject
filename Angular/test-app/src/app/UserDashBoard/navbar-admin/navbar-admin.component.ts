@@ -16,12 +16,17 @@ export class NavbarAdminComponent implements OnInit {
     })
   }
   getUserHistory(){
-    let obs = this.http.get("http://localhost:8080/UserQueries/all");
+    let obs = this.http.get("http://localhost:8080/UserQuery/all");
     obs.subscribe((UserQuery)=>{
       this.adminservice.changeQuery(UserQuery);
     })
   }
-
+  getPackges(){
+    let obs = this.http.get("http://localhost:8080/Package/all");
+    obs.subscribe((userPackage)=>{
+      this.adminservice.changePackage(userPackage);
+    })
+  }
 
   constructor(private adminservice:AdminServiceService,private http:HttpClient) { }
 

@@ -14,6 +14,8 @@ export class AdminServiceService {
   private UserQueries = new BehaviorSubject<any>('');
   currentUserqueries = this.UserQueries.asObservable();
   
+  private UserPackages = new BehaviorSubject<any>('');
+  currentUserpackages = this.UserPackages.asObservable();
   //Change the history list behaviour
   changeHistory(History:any){
     this.HistoryList.next(History);
@@ -21,6 +23,9 @@ export class AdminServiceService {
   }
   changeQuery(Users:any){
     this.UserQueries.next(Users);
+  }
+  changePackage(Package:any){
+    this.UserPackages.next(Package);
   }
   
   constructor() { }

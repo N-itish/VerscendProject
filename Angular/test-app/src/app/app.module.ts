@@ -11,6 +11,7 @@ import { AddPackageComponent } from './UserDashBoard/add-package/add-package.com
 import { RouterModule } from '@angular/router';
 import { LogoutComponent } from './UserDashBoard/logout/logout.component';
 import { UserQueriesComponent } from './UserDashBoard/user-queries/user-queries.component';
+import { ShowPackagesComponent } from './UserDashBoard/show-packages/show-packages.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { UserQueriesComponent } from './UserDashBoard/user-queries/user-queries.
     GetHistoryComponent,
     AddPackageComponent,
     LogoutComponent,
-    UserQueriesComponent
+    UserQueriesComponent,
+    ShowPackagesComponent
   ],
   imports: [
     BrowserModule,
