@@ -22,10 +22,9 @@ import com.verscend.HappyTrip.Entity.Repository.CustomersRepository;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping("/Customers")
-@CrossOrigin(origins = "*", allowCredentials = "true", allowedHeaders = "*")
 public class CustomerController {
 	
 	

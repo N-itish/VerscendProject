@@ -16,14 +16,16 @@ export class ShowPackagesComponent implements OnInit {
 
 
   deletePackage(packageid:number){
-    let obs = this.http.delete('http://localhost:8080/Packages/delete/'+packageid.toString());
+    let obs = this.http.delete('http://localhost:8080/Package/delete/'+packageid.toString())
     obs.subscribe(()=>{
 
     })
   }
-  updatePackage(packageid:number)
+  updatePackage(packageUpdate:any)
   {
-    console.log(packageid)
+    this.adminservice.changelabel('Update');
+    this.adminservice.changeUpdate(packageUpdate);
+    console.log(packageUpdate);
   }
   constructor(private adminservice:AdminServiceService,private http:HttpClient) { }
   ngOnInit() {

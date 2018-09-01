@@ -23,7 +23,7 @@
       <th>{{package.startDate}}</th>
       <th>{{package.endDate}}</th>
       <th><button class = "btn btn-danger" (click) = "deletePackage(package.id)">delete</button></th>
-      <th><button class = "btn btn-primary" (click) = "updatePackage(package.id)">update</button></th>
+      <th><button [routerLink]="['/addPackage']" class = "btn btn-primary" (click) = "updatePackage(package)">update</button></th>
     </tr>
   </table>
   </div>

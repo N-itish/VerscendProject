@@ -1,19 +1,19 @@
 
  <div class = "packageForm">
-     <h2>Create New Package<hr></h2>
+     <h2>{{Create_Update}} Package<hr></h2>
     <form (ngSubmit) = "createPackage(packageForm)" #packageForm = "ngForm">
-
-    <label>Package name</label>        <input  [(ngModel)] = "packageName"            type = "text" name = "packageName"><br>
+    <input type="hidden" [(ngModel)] = "model.id" name = "id">
+    <label>Package name</label>        <input      [(ngModel)] = "model.packageName"            type = "text" name = "packageName"><br>
     
-    <label>Image Location</label>      <input  [(ngModel)] = "imagesLocation"          type = "text" name = "imagesLocation"><br>
-    <label>Location</label>            <input  [(ngModel)] = "location"               type = "text" name = "location"><br>
-    <label>No of Days</label>          <input  [(ngModel)] = "days"                   type = "number" name = "days"><br>
-    <label>Price</label>               <input  [(ngModel)] = "price"                  type = "text" name = "price"><br>
-    <label>Starting Date</label>       <input  [(ngModel)] = "startDate"              type = "date" name = "startDate"><br>
-    <label>Ending Date</label>         <input  [(ngModel)] = "endDate"                type = "date" name = "endDate"><br><br>
+    <label>Image Location</label>      <input      [(ngModel)] = "model.imagesLocation"       type = "text" name = "imagesLocation"><br>
+    <label>Location</label>            <input      [(ngModel)] = "model.location"              type = "text" name = "location"><br>
+    <label>No of Days</label>          <input      [(ngModel)] = "model.days"                          type = "number" name = "days"><br>
+    <label>Price</label>               <input      [(ngModel)] = "model.price"                         type = "text" name = "price"><br>
+    <label>Starting Date</label>       <input      [(ngModel)] = "model.startDate"                type = "date" name = "startDate"><br>
+    <label>Ending Date</label>         <input      [(ngModel)] = "model.endDate"                    type = "date" name = "endDate"><br><br>
     <label>Package Description</label><br>
-    <textarea rows="4" cols="50" [(ngModel)] = "packageDescription"     type = "text" name = "packageDescription"></textarea><br>
-    <input class = "submitButtonEM"type = "submit" value = "Create">
+    <textarea  rows="4" cols="50"                  [(ngModel)] = "model.packageDescription"           type = "text" name = "packageDescription"></textarea><br>
+    <input class = "submitButtonEM"type = "submit" value = {{Create_Update}} >
     </form>
 </div> 
 
