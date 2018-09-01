@@ -10,12 +10,17 @@ export class AdminServiceService {
   //these two lines are used to create a observable
   private HistoryList = new BehaviorSubject<any>('');
   currentdata = this.HistoryList.asObservable();
-
+  
+  private UserQueries = new BehaviorSubject<any>('');
+  currentUserqueries = this.UserQueries.asObservable();
+  
   //Change the history list behaviour
   changeHistory(History:any){
     this.HistoryList.next(History);
-    //checking if the history list has changed
-    console.log(this.HistoryList);
+    
+  }
+  changeQuery(Users:any){
+    this.UserQueries.next(Users);
   }
   
   constructor() { }
