@@ -13,19 +13,17 @@ import { HttpClient,HttpHeaders } from '@angular/common/http';
 
 export class ShowPackagesComponent implements OnInit {
   UserPackage:any;
-
-
-  deletePackage(packageid:number){
-    let obs = this.http.delete('http://localhost:8080/Package/delete/'+packageid.toString())
-    obs.subscribe(()=>{
-
+  
+  deletePackage(Formpackage){
+    this.adminservice.deletePackage(Formpackage).subscribe(()=>{
+      this.UserPackage.splice(this.UserPackage.indexOf(Formpackage.id), 1);
     })
   }
+  
   updatePackage(packageUpdate:any)
   {
     this.adminservice.changelabel('Update');
-    this.adminservice.changeUpdate(packageUpdate);
-    console.log(packageUpdate);
+    this.adminservice.changeUpdate(packageUpdate);   
   }
   constructor(private adminservice:AdminServiceService,private http:HttpClient) { }
   ngOnInit() {

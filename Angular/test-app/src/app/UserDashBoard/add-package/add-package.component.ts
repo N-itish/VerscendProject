@@ -8,15 +8,14 @@ import { AdminServiceService } from '../../admin-service.service';
   styleUrls: ['./add-package.component.css']
 })
 export class AddPackageComponent implements OnInit {
-  Create_Update;
+  Create_Update = 'Create';
+  hide  = false;
   model : any;
   
   createPackage(packageForm){
-    console.log(packageForm.value);
-    let obs = this.http.post("http://localhost:8080/Package/add",packageForm.value);
-    obs.subscribe((response)=>{
-
-    })
+    this.hide = true;
+    this.adminservice.addPackage(packageForm).subscribe((data)=>{
+   });
   }
   
   constructor(private http : HttpClient,private adminservice:AdminServiceService) { }
@@ -24,6 +23,7 @@ export class AddPackageComponent implements OnInit {
   ngOnInit() {
     this.adminservice.currentpackageLabel.subscribe(packageName => this.Create_Update = packageName);
     this.adminservice.currentupdateData.subscribe(modelUpdate =>this.model = modelUpdate);
+    this.adminservice.currentSuccess.subscribe(changeSuccess =>this.hide = changeSuccess);
   }
 
 }

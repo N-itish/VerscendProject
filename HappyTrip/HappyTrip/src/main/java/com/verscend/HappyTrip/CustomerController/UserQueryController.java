@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
@@ -29,7 +30,7 @@ public class UserQueryController {
 	public void addPackage(@RequestBody UserMessage message) {
 		userMessage.save(message);
 	}
-	@RequestMapping("/delete/{id}")
+	@RequestMapping(value = "/delete/{id}",method = RequestMethod.DELETE)
 	public void deletePackage(@PathVariable int id) {
 		userMessage.deleteById(id);
 	}

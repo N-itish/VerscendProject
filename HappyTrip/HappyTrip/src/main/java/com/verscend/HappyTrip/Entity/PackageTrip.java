@@ -25,7 +25,7 @@ public class PackageTrip {
 	@Column(name = "packageDescription")
 	private String packageDescription;
 	
-	@Column(name = "imageLocation")
+	@Column(name = "imagesLocation")
 	private String imagesLocation;
 	
 	public String getPackageName() {
@@ -117,6 +117,13 @@ public class PackageTrip {
 	}
 	public void setEndDate(Date endDate) {
 		this.endDate = endDate;
+	}
+
+	@Override
+	public String toString() {
+		return "PackageTrip [id=" + id + ", packageName=" + packageName + ", packageDescription=" + packageDescription
+				+ ", imagesLocation=" + imagesLocation + ", location=" + location + ", days=" + days + ", price="
+				+ price + ", startDate=" + startDate + ", endDate=" + endDate + "]";
 	}
 	
 	

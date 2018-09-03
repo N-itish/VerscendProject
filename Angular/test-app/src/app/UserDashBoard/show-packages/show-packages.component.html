@@ -16,13 +16,13 @@
     <tr *ngFor = "let package of UserPackage">
       <th>{{package.packageName}}</th>
       <th>{{package.location}}</th>
-      <th>{{package.imageLocation}}</th>
+      <th>{{package.imagesLocation}}</th>
       <th>{{package.packageDescription}}</th>
       <th>{{package.days}}</th>
       <th>{{package.price}}</th>
       <th>{{package.startDate}}</th>
       <th>{{package.endDate}}</th>
-      <th><button class = "btn btn-danger" (click) = "deletePackage(package.id)">delete</button></th>
+      <th><button class = "btn btn-danger" (click) = "deletePackage(package)">delete</button></th>
       <th><button [routerLink]="['/addPackage']" class = "btn btn-primary" (click) = "updatePackage(package)">update</button></th>
     </tr>
   </table>
