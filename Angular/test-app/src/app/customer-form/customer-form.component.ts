@@ -10,8 +10,9 @@ export class CustomerFormComponent implements OnInit {
   
   model :any ={};
 
-  onSubmit() : void {  
-    let obs = this.httpclient.post("http://localhost:8080/Customers/add",JSON.stringify(this.model));
+  onSubmit() : void { 
+    console.log(this.model.value); 
+    let obs = this.httpclient.post("http://localhost:8080/Customers/add",this.model.value);
     obs.subscribe((response)=>{
       console.log(response);
       });

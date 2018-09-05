@@ -14,8 +14,16 @@ export class AddPackageComponent implements OnInit {
   
   createPackage(packageForm){
     this.hide = true;
-    this.adminservice.addPackage(packageForm).subscribe((data)=>{
-   });
+    if(this.Create_Update === "Create")
+    {
+          this.adminservice.addPackage(packageForm).subscribe((data)=>{
+        });
+    }
+    else if(this.Create_Update === "Update")
+    {
+         this.adminservice.updatePackage(packageForm).subscribe((data)=>{
+      });
+    }
   }
   
   constructor(private http : HttpClient,private adminservice:AdminServiceService) { }

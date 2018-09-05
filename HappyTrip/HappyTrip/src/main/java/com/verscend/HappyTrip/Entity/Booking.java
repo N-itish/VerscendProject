@@ -13,12 +13,12 @@ import javax.persistence.TemporalType;
 @Table(name = "booking")
 public class Booking {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name = "id")
 	private int bookId;
 	
 	@Column(name = "bookedDate")
-	@Temporal(TemporalType.DATE)
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date bookedDate;
 	
 	@Column(name = "startDate")

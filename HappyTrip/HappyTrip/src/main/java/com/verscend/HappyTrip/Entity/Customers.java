@@ -1,16 +1,23 @@
 package com.verscend.HappyTrip.Entity;
 
+import java.util.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import ch.qos.logback.core.subst.Token.Type;
 
 @Entity
 @Table(name = "Customers")
 public class Customers {
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	@Column(name = "id")
 	private int id;
 	
@@ -48,13 +55,20 @@ public class Customers {
 	@Column(name = "password")
 	private String password;
 	
+	@Column(name = "currentDate")
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date currentDate;
+	
 	public String getFirstName() {
 		return firstName;
+	}
+	public Date getCurrentDate() {
+		return currentDate;
 	}
 	public Customers() {
 		
 	}
-	public Customers(String firstName, String lastName, int age, String phoneNo, String email, String password,String gender) {
+	public Customers(Date currentDate,String firstName, String lastName, int age, String phoneNo, String email, String password,String gender) {
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -63,6 +77,7 @@ public class Customers {
 		this.email = email;
 		this.password = password;
 		this.gender = gender;
+		this.currentDate = currentDate;
 	}
 
 	@Override

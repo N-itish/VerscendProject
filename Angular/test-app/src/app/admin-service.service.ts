@@ -14,6 +14,9 @@ url : string = "http://localhost:8080/";
 addPackage(packageForm): Observable<any>{
   return  this.http.post(this.url+"Package/add",packageForm.value);
 }
+updatePackage(packageForm):Observable<any>{
+  return this.http.put(this.url+"Package/update",packageForm.value)
+}
 
 //returns the booking history
 getBookingHistory(): Observable<any>{

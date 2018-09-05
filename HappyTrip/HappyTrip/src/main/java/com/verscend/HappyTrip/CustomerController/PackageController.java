@@ -36,10 +36,13 @@ public class PackageController {
 	public void deletePackage(@PathVariable int id) {
 		packRepo.deleteById(id);
 	}
-	@RequestMapping("/update")
+	
+	
+	@RequestMapping(value = "/update",method = RequestMethod.PUT)
 	public void updatePackage(@RequestBody PackageTrip packageTrip) {
 		packRepo.save(packageTrip);
 	}
+	
 	@RequestMapping(value = "/all", method = RequestMethod.GET)
 	public List<PackageTrip> showPackage() {
 		return (List<PackageTrip>) packRepo.findAll();

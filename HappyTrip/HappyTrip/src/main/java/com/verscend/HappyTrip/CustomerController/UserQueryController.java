@@ -26,15 +26,15 @@ public class UserQueryController {
 	@Autowired
 	UserQueryRepository userMessage;
 	
-	@RequestMapping("/add")
+	@RequestMapping(value = "/add",method = RequestMethod.GET)
 	public void addPackage(@RequestBody UserMessage message) {
 		userMessage.save(message);
 	}
 	@RequestMapping(value = "/delete/{id}",method = RequestMethod.DELETE)
 	public void deletePackage(@PathVariable int id) {
 		userMessage.deleteById(id);
-	}
-	@RequestMapping("/update")
+	} 
+	@RequestMapping(value = "/update",method = RequestMethod.PUT)
 	public void updatePackage(@RequestBody UserMessage message) {
 		userMessage.save(message);
 	}
