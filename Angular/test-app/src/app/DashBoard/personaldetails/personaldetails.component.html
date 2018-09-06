@@ -1,0 +1,12 @@
+<div *ngIf = "userDetails">
+<form>
+    <input type="hidden" [(ngModel)] = "userDetails.id" name = "id">
+    <label>firstName</label>    <input [(ngModel)] = "userDetails.firstName" name = "first"  type = "text"  >  <br>
+    <label>lastName</label>     <input [(ngModel)] = "userDetails.lastName"  name = "last"   type = "text"  >  <br>
+    <label>gender</label>       <input [(ngModel)] = "userDetails.gender"    name = "sex"    type = "text"  >  <br>
+    <label>email</label>        <input [(ngModel)] = "userDetails.email"     name = "email"  type = "email" >  <br>
+    <label>phone</label>        <input [(ngModel)] = "userDetails.phoneNo"   name = "phone"  type = "text"  >  <br>
+    <label>age</label>          <input [(ngModel)] = "userDetails.age"       name = "age"    type = "number">  <br> 
+</form>
+<button (click) = "updateUser(userDetails)">update</button>
+<div>

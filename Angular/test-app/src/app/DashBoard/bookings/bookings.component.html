@@ -1,0 +1,16 @@
+<table>
+  <tr>
+    <th>location</th>
+    <th>start date</th>
+    <th>booked date</th>
+    <th>price</th>
+    <th></th>
+  </tr>
+  <tr *ngFor = "let book of bookings">
+    <td>{{book.location}}</td>
+    <td>{{book.startDate}}</td>
+    <td>{{book.bookedDate}}</td>
+    <td>{{book.price}}</td>
+    <td><button class = "btn btn-danger" (click) = "cancelBooking(book.bookId)">cancel</button></td>
+  </tr>
+</table>

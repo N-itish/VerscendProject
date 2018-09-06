@@ -6,15 +6,19 @@ import { GetHistoryComponent } from './UserDashBoard/get-history/get-history.com
 import { AddPackageComponent } from './UserDashBoard/add-package/add-package.component';
 import { UserQueriesComponent } from './UserDashBoard/user-queries/user-queries.component';
 import { ShowPackagesComponent } from './UserDashBoard/show-packages/show-packages.component';
+import { DashboardComponent } from './DashBoard/dashboard/dashboard.component';
+import { PersonaldetailsComponent } from './DashBoard/personaldetails/personaldetails.component';
+import { BookingsComponent } from './DashBoard/bookings/bookings.component';
 
 const routes:Routes=[
   {path : 'customer', component:CustomerFormComponent},
   {path : 'recentBookings', component: GetHistoryComponent},
   {path : 'addPackage', component: AddPackageComponent},
   {path : 'UserQueries',component:UserQueriesComponent},
-  {path : 'showPackages',component:ShowPackagesComponent}
-  // {path : '',component:AppComponent},
-  // {path :"dashboard",component: DashboardComponent}
+  {path : 'showPackages',component:ShowPackagesComponent},
+  {path : 'personalDetails',component:PersonaldetailsComponent},
+  {path : 'dashboard',component: DashboardComponent},
+  {path : 'bookings',component:BookingsComponent}
 ];
 
 @NgModule({

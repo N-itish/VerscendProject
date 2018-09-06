@@ -17,10 +17,39 @@ public class Booking {
 	@Column(name = "id")
 	private int bookId;
 	
+	@Column(name = "price")
+	private String price;
+	
+	@Column(name = "location")
+	private String location;
+	
 	@Column(name = "bookedDate")
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date bookedDate;
 	
+	public int getBookId() {
+		return bookId;
+	}
+
+	public void setBookId(int bookId) {
+		this.bookId = bookId;
+	}
+
+	public String getPrice() {
+		return price;
+	}
+
+	public void setPrice(String price) {
+		this.price = price;
+	}
+
+	public String getLocation() {
+		return location;
+	}
+
+	public void setLocation(String location) {
+		this.location = location;
+	}
 	@Column(name = "startDate")
 	@Temporal(TemporalType.DATE)
 	private Date startDate;
@@ -39,10 +68,13 @@ public class Booking {
 		
 	}
 	
-	public Booking(int bookId, Date bookedDate, Date startDate, Date endDate, boolean bookedStatus,
-			String packageName) {
+	
+	public Booking(int bookId, String price, String location, Date bookedDate, Date startDate, Date endDate,
+			boolean bookedStatus, String packageName) {
 		super();
 		this.bookId = bookId;
+		this.price = price;
+		this.location = location;
 		this.bookedDate = bookedDate;
 		this.startDate = startDate;
 		this.endDate = endDate;

@@ -33,6 +33,11 @@ public class CustomerController {
 	//TODO: need to store the username and password in the list
 	//List<HashMap<String, String>> CustomersLogin = new ArrayList<>();
 	
+	//This returns user details when the password is given 
+	@RequestMapping(value = "/getUser/{email}")
+	public Customers getUser(@PathVariable String email) {
+		return cusRep.findByEmail(email);
+	}	
 	@RequestMapping(value = "/all",method = RequestMethod.GET)
 	public List<Customers> getAll(){
 		return (List<Customers>) cusRep.findAll();
@@ -45,10 +50,9 @@ public class CustomerController {
 		cusRep.save(customer);
 		
 	}
-	@RequestMapping(value = "/add", method = RequestMethod.PUT)
+	@RequestMapping(value = "/update", method = RequestMethod.PUT)
 	public void update(@RequestBody Customers customer) {
 		cusRep.save(customer);
-		System.out.println("data updated!!!");
 	}
 	
 	@RequestMapping(value = "/delete/{id}",method = RequestMethod.DELETE)

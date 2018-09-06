@@ -12,6 +12,9 @@ import { RouterModule } from '@angular/router';
 import { LogoutComponent } from './UserDashBoard/logout/logout.component';
 import { UserQueriesComponent } from './UserDashBoard/user-queries/user-queries.component';
 import { ShowPackagesComponent } from './UserDashBoard/show-packages/show-packages.component';
+import { DashboardComponent } from './DashBoard/dashboard/dashboard.component';
+import { PersonaldetailsComponent } from './DashBoard/personaldetails/personaldetails.component';
+import { BookingsComponent } from './DashBoard/bookings/bookings.component';
 
 
 @NgModule({
@@ -24,7 +27,10 @@ import { ShowPackagesComponent } from './UserDashBoard/show-packages/show-packag
     AddPackageComponent,
     LogoutComponent,
     UserQueriesComponent,
-    ShowPackagesComponent
+    ShowPackagesComponent,
+    DashboardComponent,
+    PersonaldetailsComponent,
+    BookingsComponent
   ],
   imports: [
     BrowserModule,
