@@ -12,9 +12,13 @@ import { RouterModule } from '@angular/router';
 import { LogoutComponent } from './UserDashBoard/logout/logout.component';
 import { UserQueriesComponent } from './UserDashBoard/user-queries/user-queries.component';
 import { ShowPackagesComponent } from './UserDashBoard/show-packages/show-packages.component';
+<<<<<<< HEAD
 import { DashboardComponent } from './DashBoard/dashboard/dashboard.component';
 import { PersonaldetailsComponent } from './DashBoard/personaldetails/personaldetails.component';
 import { BookingsComponent } from './DashBoard/bookings/bookings.component';
+=======
+import { UpdateComponent } from './UserDashBoard/update/update.component';
+>>>>>>> sixteenth commit
 
 
 @NgModule({
@@ -28,9 +32,13 @@ import { BookingsComponent } from './DashBoard/bookings/bookings.component';
     LogoutComponent,
     UserQueriesComponent,
     ShowPackagesComponent,
+<<<<<<< HEAD
     DashboardComponent,
     PersonaldetailsComponent,
     BookingsComponent
+=======
+    UpdateComponent
+>>>>>>> sixteenth commit
   ],
   imports: [
     BrowserModule,

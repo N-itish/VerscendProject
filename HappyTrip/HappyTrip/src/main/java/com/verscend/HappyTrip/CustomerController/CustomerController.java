@@ -15,9 +15,10 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
 
+import com.verscend.HappyTrip.Entity.Booking;
 import com.verscend.HappyTrip.Entity.Customers;
 import com.verscend.HappyTrip.Entity.Repository.CustomersRepository;
-
+import com.verscend.HappyTrip.Entity.Booking;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -31,13 +32,37 @@ public class CustomerController {
 	@Autowired
 	CustomersRepository cusRep;
 	//TODO: need to store the username and password in the list
-	//List<HashMap<String, String>> CustomersLogin = new ArrayList<>();
+	// This section is for getting and setting booking for customers
+	@RequestMapping(value = "/addBooking/{id}")
+	public void InsertBooking(@PathVariable int id,@RequestBody Booking booking)
+	{
+		for(Customers c: cusRep.findAll()) {
+			if(c.getId() == id) {
+				c.setBookings(booking);
+			}
+		}
+	}
 	
+<<<<<<< HEAD
 	//This returns user details when the password is given 
 	@RequestMapping(value = "/getUser/{email}")
 	public Customers getUser(@PathVariable String email) {
 		return cusRep.findByEmail(email);
 	}	
+=======
+	@RequestMapping(value = "/getBooking/{id}")
+	public List<Booking> getBookings(@PathVariable int id){
+		for(Customers c:cusRep.findAll())
+		{
+			if(c.getId() == id)
+			{
+				return c.getBookings();
+			}
+		}
+		return null;
+	}
+	//---------------- end getter/setter for booking ----------------//
+>>>>>>> sixteenth commit
 	@RequestMapping(value = "/all",method = RequestMethod.GET)
 	public List<Customers> getAll(){
 		return (List<Customers>) cusRep.findAll();

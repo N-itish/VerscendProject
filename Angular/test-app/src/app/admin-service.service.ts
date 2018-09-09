@@ -55,11 +55,16 @@ deleteQueries(userQuery) :Observable<any>{
   private UserQueries = new BehaviorSubject<any>('');
   currentUserqueries = this.UserQueries.asObservable();
   
+<<<<<<< HEAD
   //for changing the value of success message in add/update page
   private Success = new BehaviorSubject<any>('');
   currentSuccess = this.Success.asObservable();
   
   //for getting the packages from users
+=======
+
+  //for getting the packages to the table in html
+>>>>>>> sixteenth commit
   private UserPackages = new BehaviorSubject<any>('');
   currentUserpackages = this.UserPackages.asObservable();
 
@@ -68,9 +73,13 @@ deleteQueries(userQuery) :Observable<any>{
   private packageLabel = new BehaviorSubject<any>('');
   currentpackageLabel = this.packageLabel.asObservable();
 
+<<<<<<< HEAD
   //for changing the model attribute when data is present
   //------- This is for upadate only -------//
   
+=======
+  //setting the model variable in addpackage for updating package
+>>>>>>> sixteenth commit
   private updateData = new BehaviorSubject<any>('');
   currentupdateData =  this.updateData.asObservable();
 
